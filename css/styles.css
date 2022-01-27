@@ -8,6 +8,17 @@ body {
     color: #fff;
 }
 
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* to create flexible images */
+img {
+    max-width: 100%;
+    display: block;
+}
+
 header, 
 footer {
     background-color: #115194;
@@ -33,4 +44,25 @@ nav {
     background-color: #b0d892;
     padding: 128px 0;
     margin-bottom: 24px;
+    /* One key item for RWD is % based containers = fluid layouts */
+    width: calc(96% / 3);
 }
+
+/* fluid layouts are great for mobile devices, but on desktops we'll switch to a fixed width container */
+@media screen and (min-width: 1300px) {
+    .container {
+        width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 1800px) {
+    .container {
+        width: 1700px;
+    }
+}
+
+/* The three key things for RWD: 
+1. Fluid containers (up to a point)
+2. media quaries 
+3. flexible images */
